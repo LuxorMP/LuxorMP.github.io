@@ -4,54 +4,62 @@ body {
     font-family: Arial, sans-serif;
     color: #E0E0E0;
     background-color: #121212;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Header Styles */
 header {
     position: relative;
+    padding-bottom: 20px; /* Add padding for spacing */
+}
+
+.banner-container {
+    position: relative;
     text-align: center;
 }
 
 .banner {
-    background-color: #1F1F1F;
     color: #E0E0E0;
-    padding: 20px;
+    padding: 40px 20px;
     background-image: url('Game.png');
     background-size: cover;
     background-position: center;
-}
-
-.banner img.banner-image {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
+    border-bottom: 3px solid #D32F8F;
+    margin-top: 80px; /* Adjust margin to place below button */
+    animation: fadeIn 2s ease-in-out;
 }
 
 .banner h1 {
     font-size: 3em;
     margin: 0;
     color: #D32F8F;
+    animation: slideIn 1s ease-out;
 }
 
 .banner p {
     font-size: 1.2em;
     margin: 10px 0;
+    animation: fadeIn 2s ease-in-out 0.5s;
 }
 
 .download-button {
-    display: inline-block;
-    padding: 10px 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
     background-color: #D32F8F;
     color: #E0E0E0;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: bounceIn 1s ease-in-out;
 }
 
 .download-button:hover {
     background-color: #C2185B;
+    transform: scale(1.05);
 }
 
 /* Main Content Styles */
@@ -61,39 +69,31 @@ main {
 
 section {
     margin-bottom: 40px;
+    text-align: center; /* Center text */
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     color: #D32F8F;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 ul li {
     background-color: #1F1F1F;
     margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Contact Button */
-.contact-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #D32F8F;
-    color: #E0E0E0;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.contact-button:hover {
-    background-color: #C2185B;
+    padding: 15px;
+    border-radius: 8px;
+    width: 80%; /* Adjust width for responsiveness */
+    animation: slideUp 1s ease-in-out;
 }
 
 /* Footer Styles */
@@ -101,8 +101,55 @@ footer {
     background-color: #1F1F1F;
     color: #E0E0E0;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    animation: fadeIn 2s ease-in-out 1s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
