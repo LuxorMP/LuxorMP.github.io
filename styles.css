@@ -1,0 +1,108 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #E0E0E0;
+    background-color: #121212;
+}
+
+/* Header Styles */
+header {
+    position: relative;
+    text-align: center;
+}
+
+.banner {
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    padding: 20px;
+    background-image: url('Game.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner img.banner-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #D32F8F;
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #D32F8F;
+    color: #E0E0E0;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #C2185B;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #D32F8F;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #1F1F1F;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Contact Button */
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #D32F8F;
+    color: #E0E0E0;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #C2185B;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
