@@ -16,50 +16,59 @@ header {
 .banner-container {
     position: relative;
     text-align: center;
+    margin-bottom: 40px; /* Space below the banner */
 }
 
-.banner {
+.download-button {
+    position: absolute;
+    top: -70px; /* Position above the banner */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 40px;
+    background-color: #D32F8F;
     color: #E0E0E0;
-    padding: 40px 20px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.download-button:hover {
+    background-color: #C2185B;
+    transform: scale(1.1);
+}
+
+/* Banner Styles */
+.banner {
+    width: 100%;
+    height: 1080px; /* Banner height */
+    position: relative;
     background-image: url('Game.png');
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #E0E0E0;
+    padding: 40px;
     border-bottom: 3px solid #D32F8F;
-    margin-top: 80px; /* Adjust margin to place below button */
-    animation: fadeIn 2s ease-in-out;
+    box-sizing: border-box;
 }
 
 .banner h1 {
-    font-size: 3em;
+    font-size: 4em;
     margin: 0;
     color: #D32F8F;
     animation: slideIn 1s ease-out;
 }
 
 .banner p {
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin: 10px 0;
     animation: fadeIn 2s ease-in-out 0.5s;
-}
-
-.download-button {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 15px 30px;
-    background-color: #D32F8F;
-    color: #E0E0E0;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
-    animation: bounceIn 1s ease-in-out;
-}
-
-.download-button:hover {
-    background-color: #C2185B;
-    transform: scale(1.05);
 }
 
 /* Main Content Styles */
