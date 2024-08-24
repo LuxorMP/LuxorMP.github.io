@@ -4,23 +4,24 @@ body {
     font-family: Arial, sans-serif;
     color: #E0E0E0;
     background-color: #121212;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow: hidden; /* Prevent scrollbars */
+    position: relative;
 }
 
 /* Header Styles */
 header {
     position: relative;
-    padding: 20px 0; /* Add padding for spacing */
+    padding: 20px 0;
 }
 
 .banner-container {
     text-align: center;
-    margin-bottom: 40px; /* Space below the banner */
+    margin-bottom: 40px;
 }
 
 .download-button {
     display: inline-block;
-    margin-top: 20px; /* Space above the button */
+    margin-top: 20px;
     padding: 20px 40px;
     background-color: #D32F8F;
     color: #E0E0E0;
@@ -40,9 +41,9 @@ header {
 /* Banner Styles */
 .banner {
     width: 80%;
-    max-width: 1920px; /* Max width for responsiveness */
+    max-width: 1920px;
     height: auto;
-    margin: 0 auto; /* Center the banner */
+    margin: 0 auto;
     background-image: url('Game.png');
     background-size: cover;
     background-position: center;
@@ -57,7 +58,7 @@ header {
 }
 
 .banner h1 {
-    font-size: 3em; /* Adjusted font size */
+    font-size: 3em;
     margin: 0;
     color: #D32F8F;
     animation: slideIn 1s ease-out;
@@ -76,7 +77,7 @@ main {
 
 section {
     margin-bottom: 40px;
-    text-align: center; /* Center text */
+    text-align: center;
 }
 
 h2 {
@@ -99,7 +100,7 @@ ul li {
     margin: 10px 0;
     padding: 15px;
     border-radius: 8px;
-    width: 80%; /* Adjust width for responsiveness */
+    width: 80%;
     animation: slideUp 1s ease-in-out;
 }
 
@@ -113,6 +114,30 @@ footer {
     bottom: 0;
     width: 100%;
     animation: fadeIn 2s ease-in-out 1s;
+}
+
+/* Hexagon Background Styles */
+.hexagon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    margin: -10px;
+    z-index: 0;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+    animation: hexagon-animation 20s infinite linear;
+}
+
+/* Keyframes for hexagon animation */
+@keyframes hexagon-animation {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(300px, 300px);
+    }
 }
 
 /* Animations */
