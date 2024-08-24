@@ -18,12 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
         hexagon.style.height = `${size}px`;
 
         // Random animation duration
-        const duration = Math.random() * 2 + 3; // Duration between 3s and 5s
-        hexagon.style.animationDuration = `${duration}s`;
-
-        // Random spin direction
-        const spinDirection = Math.random() > 0.5 ? 1 : -1; // Randomly choose left or right
-        hexagon.style.animation = `hexagon-rise ${duration}s linear infinite, hexagon-spin ${duration * 2}s linear infinite`;
+        const riseDuration = Math.random() * 2 + 2; // Duration between 2s and 4s for rising
+        const spinDuration = Math.random() * 2 + 4; // Duration between 4s and 6s for spinning
+        hexagon.style.animation = `hexagon-rise ${riseDuration}s linear infinite, hexagon-spin ${spinDuration}s linear infinite`;
 
         // Ensure hexagon is removed from DOM after animation ends to avoid overflow
         hexagon.addEventListener('animationend', () => {
@@ -37,5 +34,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Continuously create new hexagons to maintain background effect
-    setInterval(createHexagon, 100); // Adjust the interval for more or fewer hexagons
+    setInterval(createHexagon, 50); // Adjust the interval for more or fewer hexagons
 });
