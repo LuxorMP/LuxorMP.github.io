@@ -134,7 +134,7 @@ footer {
     background: rgba(255, 255, 255, 0.1);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background: linear-gradient(135deg, #8E2DE2, #4A00E0);
-    animation: hexagon-rise 5s linear infinite;
+    animation: hexagon-rise 5s linear infinite, hexagon-spin 10s linear infinite;
 }
 
 /* Keyframes for upward movement */
@@ -144,6 +144,16 @@ footer {
     }
     100% {
         transform: translateY(-100px); /* Move up and out of the viewport */
+    }
+}
+
+/* Keyframes for slow spinning */
+@keyframes hexagon-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
