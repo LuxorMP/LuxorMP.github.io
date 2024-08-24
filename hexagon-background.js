@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const duration = Math.random() * 2 + 3; // Duration between 3s and 5s
         hexagon.style.animationDuration = `${duration}s`;
 
+        // Random spin direction
+        const spinDirection = Math.random() > 0.5 ? 1 : -1; // Randomly choose left or right
+        hexagon.style.animation = `hexagon-rise ${duration}s linear infinite, hexagon-spin ${duration * 2}s linear infinite`;
+
         // Ensure hexagon is removed from DOM after animation ends to avoid overflow
         hexagon.addEventListener('animationend', () => {
             hexagon.remove();
