@@ -119,7 +119,7 @@ footer {
 /* Hexagon Background Styles */
 .hexagon-container {
     position: absolute;
-    bottom: 0; /* Start from the bottom */
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -134,26 +134,16 @@ footer {
     background: rgba(255, 255, 255, 0.1);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background: linear-gradient(135deg, #8E2DE2, #4A00E0);
-    animation: hexagon-rise 3s linear infinite, hexagon-spin 10s linear infinite;
+    animation: hexagon-float 10s ease-in-out infinite;
 }
 
-/* Keyframes for upward movement */
-@keyframes hexagon-rise {
+/* Keyframes for fabric-like animation */
+@keyframes hexagon-float {
     0% {
-        transform: translateY(100vh); /* Start from the bottom of the viewport */
+        transform: translate(0, 0);
     }
     100% {
-        transform: translateY(-100px); /* Move up and out of the viewport */
-    }
-}
-
-/* Keyframes for slow spinning */
-@keyframes hexagon-spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
+        transform: translate(calc(100vw - 100px), calc(100vh - 100px));
     }
 }
 
