@@ -1,0 +1,64 @@
+/* Donation List Styles */
+.donation-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donation-item {
+    background-color: #1F1F1F;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 12px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideUp 1s ease-in-out;
+    box-sizing: border-box;
+}
+
+.donation-image {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.donation-details {
+    text-align: center;
+}
+
+.donation-details h3 {
+    margin: 0;
+    color: #D32F8F;
+    font-size: 1.8em;
+}
+
+.donation-details p {
+    margin: 5px 0;
+    color: #E0E0E0;
+    font-size: 1.2em;
+}
+
+.buy-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #D32F8F;
+    color: #E0E0E0;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #C2185B;
+    transform: scale(1.05);
+}
