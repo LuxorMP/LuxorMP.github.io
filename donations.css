@@ -37,7 +37,6 @@ header {
 .banner {
     width: 80%;
     max-width: 1920px;
-    height: auto;
     margin: 0 auto;
     background-image: url('Game.png');
     background-size: cover;
@@ -88,14 +87,16 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px; /* Space between items */
+    margin: 0 auto;
+    max-width: 1200px; /* Center the list */
 }
 
 .donation-item {
-    background-color: #000000;
+    background-color: #1F1F1F;
     margin: 10px;
     padding: 15px;
     border-radius: 12px;
-    width: 300px; /* Adjust width as needed */
+    width: 300px; /* Fixed width */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,7 +111,7 @@ h2 {
 
 .donation-image {
     width: 100%;
-    height: 200px; /* Adjust height as needed */
+    height: 200px; /* Adjust height */
     background-size: cover;
     background-position: center;
     border-radius: 12px;
