@@ -1,74 +1,237 @@
 /* General Styles */
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    color: #E0E0E0; /* Default text color */
-    background-color: #000000; /* Background color for the entire page */
+    color: #E0E0E0;
+    background-color: #121212;
+    overflow: hidden; /* Prevent scrollbars */
+    position: relative;
+}
+
+/* Header Styles */
+header {
+    position: relative;
+    padding: 20px 0;
+}
+
+.donations-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #D32F8F;
+    color: #E0E0E0;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.donations-button:hover {
+    background-color: #C2185B;
+    transform: scale(1.05);
+}
+
+/* Banner Styles */
+.banner {
+    width: 80%;
+    max-width: 1920px;
+    height: auto;
+    margin: 0 auto;
+    background-image: url('Game.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #E0E0E0;
+    padding: 40px;
+    border-bottom: 3px solid #D32F8F;
+    box-sizing: border-box;
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #D32F8F;
+    animation: slideIn 1s ease-out;
+}
+
+.banner p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    animation: fadeIn 2s ease-in-out 0.5s;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #D32F8F;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 /* Donation List Styles */
 .donation-list {
-    list-style-type: none;
-    padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between items */
 }
 
 .donation-item {
-    background-color: #000000; /* Background color for donation items */
-    margin: 10px 0;
+    background-color: #000000;
+    margin: 10px;
     padding: 15px;
     border-radius: 12px;
-    width: 80%;
+    width: 300px; /* Adjust width as needed */
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: slideUp 1s ease-in-out;
     box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.donation-item:hover {
+    transform: scale(1.05);
 }
 
 .donation-image {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
     background-size: cover;
     background-position: center;
     border-radius: 12px;
     margin-bottom: 15px;
 }
 
-.donation-details {
-    text-align: center;
-}
-
 .donation-details h3 {
     margin: 0;
-    color: #D32F8F; /* Pink color for headings */
+    color: #D32F8F;
     font-size: 1.8em;
-    font-family: Arial, sans-serif; /* Arial font */
 }
 
 .donation-details p {
     margin: 5px 0;
-    color: #D32F8F; /* Pink color for paragraph text */
+    color: #D32F8F;
     font-size: 1.2em;
-    font-family: Arial, sans-serif; /* Arial font */
 }
 
 .buy-button {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #D32F8F; /* Pink color for button */
-    color: #E0E0E0; /* Light text color on button */
+    background-color: #D32F8F;
+    color: #E0E0E0;
     text-decoration: none;
     border-radius: 12px;
     font-weight: bold;
     font-size: 1.2em;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    font-family: Arial, sans-serif; /* Arial font */
 }
 
 .buy-button:hover {
-    background-color: #C2185B; /* Darker pink for hover effect */
+    background-color: #C2185B;
     transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out 1s;
+}
+
+/* Hexagon Background Styles */
+.hexagon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.hexagon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+    animation: hexagon-float 10s ease-in-out infinite;
+}
+
+/* Keyframes for fabric-like animation */
+@keyframes hexagon-float {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
