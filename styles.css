@@ -14,28 +14,24 @@ header {
     padding: 20px 0;
 }
 
-.banner-container {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.download-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 20px 40px;
+/* Donations Button Styles */
+.donations-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
     background-color: #D32F8F;
     color: #E0E0E0;
     text-decoration: none;
     border-radius: 12px;
     font-weight: bold;
     font-size: 1.2em;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    animation: bounceIn 1s ease-in-out;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.download-button:hover {
+.donations-button:hover {
     background-color: #C2185B;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* Banner Styles */
@@ -87,21 +83,71 @@ h2 {
     animation: fadeIn 2s ease-in-out;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Donation List Styles */
+.donation-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between items */
+    margin: 0 auto;
+    max-width: 1200px; /* Center the list */
+}
+
+.donation-item {
+    background-color: #1F1F1F;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 12px;
+    width: 300px; /* Fixed width */
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-ul li {
-    background-color: #1F1F1F;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 8px;
-    width: 80%;
-    animation: slideUp 1s ease-in-out;
+.donation-item:hover {
+    transform: scale(1.05);
+}
+
+.donation-image {
+    width: 100%;
+    height: 200px; /* Adjust height */
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.donation-details h3 {
+    margin: 0;
+    color: #D32F8F;
+    font-size: 1.8em;
+}
+
+.donation-details p {
+    margin: 5px 0;
+    color: #D32F8F;
+    font-size: 1.2em;
+}
+
+.buy-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #D32F8F;
+    color: #E0E0E0;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #C2185B;
+    transform: scale(1.05);
 }
 
 /* Footer Styles */
