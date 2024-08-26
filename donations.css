@@ -1,3 +1,10 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #E0E0E0; /* Default text color */
+    background-color: #000000; /* Background color for the entire page */
+}
+
 /* Donation List Styles */
 .donation-list {
     list-style-type: none;
@@ -8,7 +15,7 @@
 }
 
 .donation-item {
-    background-color: #1F1F1F;
+    background-color: #000000; /* Background color for donation items */
     margin: 10px 0;
     padding: 15px;
     border-radius: 12px;
@@ -35,30 +42,33 @@
 
 .donation-details h3 {
     margin: 0;
-    color: #D32F8F;
+    color: #D32F8F; /* Pink color for headings */
     font-size: 1.8em;
+    font-family: Arial, sans-serif; /* Arial font */
 }
 
 .donation-details p {
     margin: 5px 0;
-    color: #E0E0E0;
+    color: #D32F8F; /* Pink color for paragraph text */
     font-size: 1.2em;
+    font-family: Arial, sans-serif; /* Arial font */
 }
 
 .buy-button {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #D32F8F;
-    color: #E0E0E0;
+    background-color: #D32F8F; /* Pink color for button */
+    color: #E0E0E0; /* Light text color on button */
     text-decoration: none;
     border-radius: 12px;
     font-weight: bold;
     font-size: 1.2em;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: Arial, sans-serif; /* Arial font */
 }
 
 .buy-button:hover {
-    background-color: #C2185B;
+    background-color: #C2185B; /* Darker pink for hover effect */
     transform: scale(1.05);
 }
