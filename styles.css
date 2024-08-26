@@ -14,26 +14,6 @@ header {
     padding: 20px 0;
 }
 
-/* Donations Button Styles */
-.donations-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #D32F8F;
-    color: #E0E0E0;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.donations-button:hover {
-    background-color: #C2185B;
-    transform: scale(1.05);
-}
-
 /* Banner Styles */
 .banner {
     width: 80%;
@@ -66,6 +46,46 @@ header {
     animation: fadeIn 2s ease-in-out 0.5s;
 }
 
+/* Donations Button Styles */
+.donations-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #D32F8F;
+    color: #E0E0E0;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.donations-button:hover {
+    background-color: #C2185B;
+    transform: scale(1.05);
+}
+
+/* Download Button Styles */
+.download-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 20px 40px;
+    background-color: #D32F8F;
+    color: #E0E0E0;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: bounceIn 1s ease-in-out;
+}
+
+.download-button:hover {
+    background-color: #C2185B;
+    transform: scale(1.1);
+}
+
 /* Main Content Styles */
 main {
     padding: 20px;
@@ -81,6 +101,23 @@ h2 {
     color: #D32F8F;
     margin-bottom: 20px;
     animation: fadeIn 2s ease-in-out;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul li {
+    background-color: #1F1F1F;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    width: 80%;
+    animation: slideUp 1s ease-in-out;
 }
 
 /* Donation List Styles */
