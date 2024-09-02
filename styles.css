@@ -44,13 +44,13 @@ body::before {
     content: "";
     position: absolute;
     width: 200%;
-    height: 100%;
+    height: 50vh; /* Adjust the height to make the wave larger */
     z-index: -1;
     pointer-events: none;
-    top: 0;
+    bottom: 0; /* Position at the bottom */
     left: -50%;
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
-    clip-path: path('M0,80 C200,150 600,0 1000,80 L1000,300 L0,300 Z');
+    clip-path: path('M0,100 C200,200 800,50 1200,100 L1200,300 L0,300 Z');
     animation: wave-animation 15s linear infinite, color-change 30s linear infinite;
 }
 
