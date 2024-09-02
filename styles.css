@@ -1,9 +1,9 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
     color: #E0E0E0;
-    background-color: #121212;
+    background: linear-gradient(135deg, #1F1F1F 0%, #121212 100%);
     overflow: hidden; /* Prevent scrollbars */
     position: relative;
 }
@@ -18,7 +18,6 @@ header {
 .banner {
     width: 80%;
     max-width: 1920px;
-    height: auto;
     margin: 0 auto;
     background-image: url('Game.png');
     background-size: cover;
@@ -28,21 +27,39 @@ header {
     align-items: center;
     justify-content: center;
     color: #E0E0E0;
-    padding: 40px;
-    border-bottom: 3px solid #D32F8F;
-    box-sizing: border-box;
+    padding: 60px 40px;
+    border-bottom: 4px solid #D32F8F;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 15px; /* Rounded corners for a modern look */
+    position: relative; /* Added for positioning of wave effect */
+    overflow: hidden; /* Hide overflow to keep wave effect contained */
 }
 
+/* Wave Background Effect */
+.banner::before {
+    content: "";
+    position: absolute;
+    bottom: -50px; /* Adjust based on needs */
+    left: 0;
+    width: 100%;
+    height: 150px; /* Height of the wave */
+    background: rgba(255, 255, 255, 0.2);
+    clip-path: ellipse(70% 50% at 50% 100%);
+    animation: wave-animation 8s ease-in-out infinite;
+}
+
+/* Header Text Animation */
 .banner h1 {
-    font-size: 3em;
+    font-size: 4em;
     margin: 0;
     color: #D32F8F;
+    font-weight: 700; /* Bold font for emphasis */
     animation: slideIn 1s ease-out;
 }
 
 .banner p {
-    font-size: 1.5em;
-    margin: 10px 0;
+    font-size: 1.8em;
+    margin: 15px 0;
     animation: fadeIn 2s ease-in-out 0.5s;
 }
 
@@ -51,38 +68,40 @@ header {
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 10px 20px;
-    background-color: #D32F8F;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #D32F8F, #C2185B);
     color: #E0E0E0;
     text-decoration: none;
-    border-radius: 12px;
-    font-weight: bold;
+    border-radius: 20px; /* More rounded for a modern look */
+    font-weight: 600;
     font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
 .donations-button:hover {
-    background-color: #C2185B;
+    background: linear-gradient(135deg, #C2185B, #D32F8F);
     transform: scale(1.05);
 }
 
 /* Download Button Styles */
 .download-button {
     display: inline-block;
-    margin-top: 20px;
-    padding: 20px 40px;
-    background-color: #D32F8F;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #D32F8F, #C2185B);
     color: #E0E0E0;
     text-decoration: none;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 1.2em;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 20px; /* More rounded for consistency */
+    font-weight: 600;
+    font-size: 1.3em;
+    transition: transform 0.3s ease, background 0.3s ease;
     animation: bounceIn 1s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
 .download-button:hover {
-    background-color: #C2185B;
+    background: linear-gradient(135deg, #C2185B, #D32F8F);
     transform: scale(1.1);
 }
 
@@ -97,12 +116,13 @@ section {
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 3em;
     color: #D32F8F;
     margin-bottom: 20px;
     animation: fadeIn 2s ease-in-out;
 }
 
+/* Enhanced List Styles */
 ul {
     list-style-type: none;
     padding: 0;
@@ -112,12 +132,13 @@ ul {
 }
 
 ul li {
-    background-color: #1F1F1F;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 8px;
+    background-color: #2C2C2C;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 12px;
     width: 80%;
     animation: slideUp 1s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
 /* Donation List Styles */
@@ -131,17 +152,18 @@ ul li {
 }
 
 .donation-item {
-    background-color: #1F1F1F;
+    background-color: #2C2C2C;
     margin: 10px;
-    padding: 15px;
-    border-radius: 12px;
-    width: 300px; /* Fixed width */
+    padding: 20px;
+    border-radius: 15px; /* Consistent with other elements */
+    width: 320px; /* Slightly wider for better display */
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
     text-align: center;
     transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
 .donation-item:hover {
@@ -150,17 +172,17 @@ ul li {
 
 .donation-image {
     width: 100%;
-    height: 200px; /* Adjust height */
+    height: 220px; /* Adjust height for a better fit */
     background-size: cover;
     background-position: center;
-    border-radius: 12px;
-    margin-bottom: 15px;
+    border-radius: 15px; /* Consistent with other elements */
+    margin-bottom: 20px;
 }
 
 .donation-details h3 {
     margin: 0;
     color: #D32F8F;
-    font-size: 1.8em;
+    font-size: 1.9em;
 }
 
 .donation-details p {
@@ -171,32 +193,34 @@ ul li {
 
 .buy-button {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #D32F8F;
+    margin-top: 15px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #D32F8F, #C2185B);
     color: #E0E0E0;
     text-decoration: none;
-    border-radius: 12px;
-    font-weight: bold;
+    border-radius: 20px; /* Consistent with other buttons */
+    font-weight: 600;
     font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
 .buy-button:hover {
-    background-color: #C2185B;
+    background: linear-gradient(135deg, #C2185B, #D32F8F);
     transform: scale(1.05);
 }
 
 /* Footer Styles */
 footer {
-    background-color: #1F1F1F;
+    background-color: #2C2C2C;
     color: #E0E0E0;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     position: fixed;
     bottom: 0;
     width: 100%;
     animation: fadeIn 2s ease-in-out 1s;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
 /* Hexagon Background Styles */
@@ -212,8 +236,8 @@ footer {
 
 .hexagon {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     background: rgba(255, 255, 255, 0.1);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background: linear-gradient(135deg, #8E2DE2, #4A00E0);
@@ -226,7 +250,7 @@ footer {
         transform: translate(0, 0);
     }
     100% {
-        transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+        transform: translate(calc(100vw - 120px), calc(100vh - 120px));
     }
 }
 
@@ -273,5 +297,17 @@ footer {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateX(-100%) translateY(0);
+    }
+    50% {
+        transform: translateX(0) translateY(20%);
+    }
+    100% {
+        transform: translateX(100%) translateY(0);
     }
 }
