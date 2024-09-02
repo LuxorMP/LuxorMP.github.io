@@ -43,15 +43,15 @@ header {
 body::before {
     content: "";
     position: absolute;
-    width: 200%;
-    height: 50vh; /* Adjust the height to make the wave larger */
+    width: 200vw; /* Extend wave horizontally */
+    height: 30vh; /* Adjust height for more prominence */
     z-index: -1;
     pointer-events: none;
-    bottom: 0; /* Position at the bottom */
-    left: -50%;
+    bottom: -5vh; /* Position slightly below the viewport bottom */
+    left: -50vw; /* Center horizontally */
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
-    clip-path: path('M0,100 C200,200 800,50 1200,100 L1200,300 L0,300 Z');
-    animation: wave-animation 15s linear infinite, color-change 30s linear infinite;
+    clip-path: path('M0,100 C200,200 800,0 1600,100 L1600,200 L0,200 Z'); /* Extended wave shape */
+    animation: wave-animation 20s linear infinite, color-change 30s linear infinite;
 }
 
 /* Header Text Animation */
@@ -235,7 +235,7 @@ footer {
         transform: translateX(-100%) translateY(0);
     }
     50% {
-        transform: translateX(0) translateY(10%);
+        transform: translateX(0) translateY(5%);
     }
     100% {
         transform: translateX(100%) translateY(0);
