@@ -6,32 +6,26 @@ body {
     background: #121212;
     overflow: hidden;
     position: relative;
+    height: 100vh; /* Ensure body takes up full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Wave Background Effect */
-body::before, body::after {
+body::before {
     content: "";
     position: absolute;
     width: 200%;
     height: 200%;
-    z-index: -2;
+    z-index: -1;
     pointer-events: none;
     top: 0;
     left: 0;
-}
-
-/* Top Wave */
-body::before {
-    background: rgba(0, 255, 255, 0.5);
-    clip-path: polygon(0 40%, 100% 30%, 100% 100%, 0 100%);
-    animation: wave-animation 15s linear infinite;
-}
-
-/* Bottom Wave */
-body::after {
-    background: rgba(255, 0, 255, 0.5);
+    background-size: 200% 200%;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
     clip-path: polygon(0 50%, 100% 40%, 100% 100%, 0 100%);
-    animation: wave-animation 20s linear infinite;
+    animation: wave-animation 15s linear infinite, color-change 30s linear infinite;
 }
 
 /* Keyframes for wave animations */
@@ -42,4 +36,36 @@ body::after {
     100% {
         transform: translateX(100%);
     }
+}
+
+@keyframes color-change {
+    0% {
+        background: linear-gradient(135deg, #00A1FF, #005CFF);
+    }
+    50% {
+        background: linear-gradient(135deg, #FF00A1, #FF005C);
+    }
+    100% {
+        background: linear-gradient(135deg, #00A1FF, #005CFF);
+    }
+}
+
+/* Main Content */
+.main-content {
+    position: relative;
+    z-index: 1; /* Ensure content is above the wave */
+    text-align: center;
+    color: #E0E0E0;
+}
+
+/* Example Content Styles */
+h1 {
+    color: #D32F8F;
+    font-size: 4em;
+    margin: 0;
+}
+
+p {
+    color: #E0E0E0;
+    font-size: 1.5em;
 }
