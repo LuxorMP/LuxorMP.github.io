@@ -1,10 +1,10 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif; /* Modern font */
+    font-family: 'Roboto', sans-serif;
     color: #E0E0E0;
-    background: #121212; /* Base background color */
-    overflow: hidden; /* Prevent scrollbars */
+    background: #121212;
+    overflow: hidden;
     position: relative;
 }
 
@@ -30,33 +30,35 @@ header {
     padding: 60px 40px;
     border-bottom: 4px solid #D32F8F;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 15px; /* Rounded corners */
-    position: relative; /* For positioning of wave effect */
-    overflow: hidden; /* Hide overflow to keep wave effect contained */
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Wave Background Effect */
 body::before, body::after {
     content: "";
     position: absolute;
-    left: 0;
     width: 200%;
     height: 200%;
-    z-index: -2; /* Background layer */
-    pointer-events: none; /* Ignore pointer events */
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5));
-    clip-path: ellipse(150% 70% at 50% 50%);
+    z-index: -2;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
 }
 
 body::before {
-    top: -50%;
-    background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(0, 0, 0, 0.4));
+    clip-path: polygon(0 30%, 100% 20%, 100% 100%, 0 100%);
     animation: wave-animation 30s linear infinite, color-change 30s linear infinite;
 }
 
 body::after {
-    top: -25%;
     background: linear-gradient(135deg, rgba(255, 0, 255, 0.3), rgba(0, 0, 0, 0.3));
+    clip-path: polygon(0 50%, 100% 40%, 100% 100%, 0 100%);
     animation: wave-animation 40s linear infinite, color-change 40s linear infinite;
 }
 
