@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif; /* Use a modern font */
+    font-family: 'Roboto', sans-serif; /* Modern font */
     color: #E0E0E0;
     background: linear-gradient(135deg, #1F1F1F 0%, #121212 100%);
     overflow: hidden; /* Prevent scrollbars */
@@ -30,22 +30,34 @@ header {
     padding: 60px 40px;
     border-bottom: 4px solid #D32F8F;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 15px; /* Rounded corners for a modern look */
-    position: relative; /* Added for positioning of wave effect */
+    border-radius: 15px; /* Rounded corners */
+    position: relative; /* For positioning of wave effect */
     overflow: hidden; /* Hide overflow to keep wave effect contained */
 }
 
 /* Wave Background Effect */
-.banner::before {
+body::before, body::after {
     content: "";
     position: absolute;
-    bottom: -60px; /* Move the wave down */
     left: 0;
     width: 100%;
-    height: 200px; /* Height of the wave */
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.2)); /* Initial color gradient */
-    clip-path: ellipse(80% 40% at 50% 100%);
-    animation: wave-animation 12s ease-in-out infinite, color-change 12s linear infinite; /* Added color-change animation */
+    height: 100%;
+    z-index: -2; /* Background layer */
+    pointer-events: none; /* Ignore pointer events */
+}
+
+body::before {
+    top: -10%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.3));
+    clip-path: ellipse(80% 50% at 50% 100%);
+    animation: wave-animation 15s linear infinite, color-change 15s linear infinite;
+}
+
+body::after {
+    top: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.1));
+    clip-path: ellipse(100% 60% at 50% 100%);
+    animation: wave-animation 20s linear infinite, color-change 20s linear infinite;
 }
 
 /* Header Text Animation */
@@ -53,7 +65,7 @@ header {
     font-size: 4em;
     margin: 0;
     color: #D32F8F;
-    font-weight: 700; /* Bold font for emphasis */
+    font-weight: 700;
     animation: slideIn 1s ease-out;
 }
 
@@ -72,11 +84,11 @@ header {
     background: linear-gradient(135deg, #D32F8F, #C2185B);
     color: #E0E0E0;
     text-decoration: none;
-    border-radius: 20px; /* More rounded for a modern look */
+    border-radius: 20px;
     font-weight: 600;
     font-size: 1.2em;
     transition: background 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .donations-button:hover {
@@ -92,12 +104,12 @@ header {
     background: linear-gradient(135deg, #D32F8F, #C2185B);
     color: #E0E0E0;
     text-decoration: none;
-    border-radius: 20px; /* More rounded for consistency */
+    border-radius: 20px;
     font-weight: 600;
     font-size: 1.3em;
     transition: transform 0.3s ease, background 0.3s ease;
     animation: bounceIn 1s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .download-button:hover {
@@ -138,7 +150,7 @@ ul li {
     border-radius: 12px;
     width: 80%;
     animation: slideUp 1s ease-in-out;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Donation List Styles */
@@ -146,24 +158,24 @@ ul li {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Space between items */
+    gap: 20px;
     margin: 0 auto;
-    max-width: 1200px; /* Center the list */
+    max-width: 1200px;
 }
 
 .donation-item {
     background-color: #2C2C2C;
     margin: 10px;
     padding: 20px;
-    border-radius: 15px; /* Consistent with other elements */
-    width: 320px; /* Slightly wider for better display */
+    border-radius: 15px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
     text-align: center;
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .donation-item:hover {
@@ -172,10 +184,10 @@ ul li {
 
 .donation-image {
     width: 100%;
-    height: 220px; /* Adjust height for a better fit */
+    height: 220px;
     background-size: cover;
     background-position: center;
-    border-radius: 15px; /* Consistent with other elements */
+    border-radius: 15px;
     margin-bottom: 20px;
 }
 
@@ -198,11 +210,11 @@ ul li {
     background: linear-gradient(135deg, #D32F8F, #C2185B);
     color: #E0E0E0;
     text-decoration: none;
-    border-radius: 20px; /* Consistent with other buttons */
+    border-radius: 20px;
     font-weight: 600;
     font-size: 1.2em;
     transition: background 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .buy-button:hover {
@@ -220,28 +232,7 @@ footer {
     bottom: 0;
     width: 100%;
     animation: fadeIn 2s ease-in-out 1s;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-}
-
-/* Hexagon Background Styles */
-.hexagon-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.hexagon {
-    position: absolute;
-    width: 120px; /* Slightly larger for better visibility */
-    height: 120px;
-    background: rgba(255, 255, 255, 0.2); /* Increased opacity */
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    background: linear-gradient(135deg, #8E2DE2, #4A00E0);
-    animation: hexagon-animation 12s linear infinite; /* Slower for better visibility */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Keyframes for hexagon animations */
