@@ -12,29 +12,233 @@ body {
     justify-content: center;
 }
 
+/* Header Styles */
+header {
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Banner Styles */
+.banner {
+    width: 80%;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-image: url('Game.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #E0E0E0;
+    padding: 60px 40px;
+    border-bottom: 4px solid #D32F8F;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
 /* Wave Background Effect */
 body::before {
     content: "";
     position: absolute;
     width: 200%;
-    height: 200%;
+    height: 100%;
     z-index: -1;
     pointer-events: none;
     top: 0;
-    left: 0;
-    background-size: 200% 200%;
+    left: -50%;
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
-    clip-path: polygon(0 50%, 100% 40%, 100% 100%, 0 100%);
+    clip-path: path('M0,80 C200,150 600,0 1000,80 L1000,300 L0,300 Z');
     animation: wave-animation 15s linear infinite, color-change 30s linear infinite;
+}
+
+/* Header Text Animation */
+.banner h1 {
+    font-size: 4em;
+    margin: 0;
+    color: #D32F8F;
+    font-weight: 700;
+    animation: slideIn 1s ease-out;
+}
+
+.banner p {
+    font-size: 1.8em;
+    margin: 15px 0;
+    animation: fadeIn 2s ease-in-out 0.5s;
+}
+
+/* Donations Button Styles */
+.donations-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #D32F8F, #C2185B);
+    color: #E0E0E0;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.2em;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.donations-button:hover {
+    background: linear-gradient(135deg, #C2185B, #D32F8F);
+    transform: scale(1.05);
+}
+
+/* Download Button Styles */
+.download-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #D32F8F, #C2185B);
+    color: #E0E0E0;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.3em;
+    transition: transform 0.3s ease, background 0.3s ease;
+    animation: bounceIn 1s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.download-button:hover {
+    background: linear-gradient(135deg, #C2185B, #D32F8F);
+    transform: scale(1.1);
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3em;
+    color: #D32F8F;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Enhanced List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul li {
+    background-color: #2C2C2C;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    animation: slideUp 1s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Donation List Styles */
+.donation-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.donation-item {
+    background-color: #2C2C2C;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.donation-item:hover {
+    transform: scale(1.05);
+}
+
+.donation-image {
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.donation-details h3 {
+    margin: 0;
+    color: #D32F8F;
+    font-size: 1.9em;
+}
+
+.donation-details p {
+    margin: 5px 0;
+    color: #D32F8F;
+    font-size: 1.2em;
+}
+
+.buy-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #D32F8F, #C2185B);
+    color: #E0E0E0;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.2em;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.buy-button:hover {
+    background: linear-gradient(135deg, #C2185B, #D32F8F);
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2C2C2C;
+    color: #E0E0E0;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out 1s;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Keyframes for wave animations */
 @keyframes wave-animation {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(-100%) translateY(0);
+    }
+    50% {
+        transform: translateX(0) translateY(10%);
     }
     100% {
-        transform: translateX(100%);
+        transform: translateX(100%) translateY(0);
     }
 }
 
@@ -50,22 +254,48 @@ body::before {
     }
 }
 
-/* Main Content */
-.main-content {
-    position: relative;
-    z-index: 1; /* Ensure content is above the wave */
-    text-align: center;
-    color: #E0E0E0;
+/* Animations for other elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-/* Example Content Styles */
-h1 {
-    color: #D32F8F;
-    font-size: 4em;
-    margin: 0;
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-p {
-    color: #E0E0E0;
-    font-size: 1.5em;
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
