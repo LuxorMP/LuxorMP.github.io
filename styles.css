@@ -43,23 +43,23 @@ body::before, body::after {
     height: 200%;
     z-index: -2;
     pointer-events: none;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     top: 0;
     left: 0;
+    background-repeat: no-repeat;
 }
 
+/* Top Wave */
 body::before {
-    background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(0, 0, 0, 0.4));
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
     clip-path: polygon(0 30%, 100% 20%, 100% 100%, 0 100%);
-    animation: wave-animation 30s linear infinite, color-change 30s linear infinite;
+    animation: wave-animation 20s linear infinite, color-change 30s linear infinite;
 }
 
+/* Bottom Wave */
 body::after {
-    background: linear-gradient(135deg, rgba(255, 0, 255, 0.3), rgba(0, 0, 0, 0.3));
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.5), rgba(0, 0, 0, 0.5));
     clip-path: polygon(0 50%, 100% 40%, 100% 100%, 0 100%);
-    animation: wave-animation 40s linear infinite, color-change 40s linear infinite;
+    animation: wave-animation 25s linear infinite, color-change 35s linear infinite;
 }
 
 /* Header Text Animation */
@@ -262,7 +262,7 @@ footer {
     }
 }
 
-/* Animations */
+/* Animations for other elements */
 @keyframes fadeIn {
     from {
         opacity: 0;
