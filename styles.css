@@ -236,21 +236,39 @@ footer {
 
 .hexagon {
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     background: rgba(255, 255, 255, 0.1);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background: linear-gradient(135deg, #8E2DE2, #4A00E0);
-    animation: hexagon-float 10s ease-in-out infinite;
+    animation: hexagon-animation 15s linear infinite;
 }
 
-/* Keyframes for fabric-like animation */
-@keyframes hexagon-float {
+/* Keyframes for hexagon animations */
+@keyframes hexagon-animation {
     0% {
-        transform: translate(0, 0);
+        transform: scale(0.8) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.7;
     }
     100% {
-        transform: translate(calc(100vw - 120px), calc(100vh - 120px));
+        transform: scale(0.8) rotate(360deg);
+        opacity: 0.5;
+    }
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateX(-100%) translateY(0);
+    }
+    50% {
+        transform: translateX(0) translateY(20%);
+    }
+    100% {
+        transform: translateX(100%) translateY(0);
     }
 }
 
@@ -297,17 +315,5 @@ footer {
     to {
         transform: translateY(0);
         opacity: 1;
-    }
-}
-
-@keyframes wave-animation {
-    0% {
-        transform: translateX(-100%) translateY(0);
-    }
-    50% {
-        transform: translateX(0) translateY(20%);
-    }
-    100% {
-        transform: translateX(100%) translateY(0);
     }
 }
