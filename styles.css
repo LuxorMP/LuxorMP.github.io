@@ -39,13 +39,13 @@ header {
 .banner::before {
     content: "";
     position: absolute;
-    bottom: -50px; /* Adjust based on needs */
+    bottom: -60px; /* Move the wave down */
     left: 0;
     width: 100%;
-    height: 150px; /* Height of the wave */
-    background: rgba(255, 255, 255, 0.2);
-    clip-path: ellipse(70% 50% at 50% 100%);
-    animation: wave-animation 8s ease-in-out infinite;
+    height: 200px; /* Height of the wave */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.2)); /* Initial color gradient */
+    clip-path: ellipse(80% 40% at 50% 100%);
+    animation: wave-animation 12s ease-in-out infinite, color-change 12s linear infinite; /* Added color-change animation */
 }
 
 /* Header Text Animation */
@@ -236,12 +236,12 @@ footer {
 
 .hexagon {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.1);
+    width: 120px; /* Slightly larger for better visibility */
+    height: 120px;
+    background: rgba(255, 255, 255, 0.2); /* Increased opacity */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background: linear-gradient(135deg, #8E2DE2, #4A00E0);
-    animation: hexagon-animation 15s linear infinite;
+    animation: hexagon-animation 12s linear infinite; /* Slower for better visibility */
 }
 
 /* Keyframes for hexagon animations */
@@ -260,15 +260,28 @@ footer {
     }
 }
 
+/* Wave Animation with Color Change */
 @keyframes wave-animation {
     0% {
         transform: translateX(-100%) translateY(0);
     }
     50% {
-        transform: translateX(0) translateY(20%);
+        transform: translateX(0) translateY(10%);
     }
     100% {
         transform: translateX(100%) translateY(0);
+    }
+}
+
+@keyframes color-change {
+    0% {
+        background: linear-gradient(135deg, #00A1FF, #005CFF);
+    }
+    50% {
+        background: linear-gradient(135deg, #FF00A1, #FF005C);
+    }
+    100% {
+        background: linear-gradient(135deg, #00A1FF, #005CFF);
     }
 }
 
