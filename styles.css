@@ -1,4 +1,3 @@
-/* General Styles */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -6,19 +5,17 @@ body {
     background: #121212;
     overflow: hidden;
     position: relative;
-    height: 100vh; /* Ensure body takes up full viewport height */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Header Styles */
 header {
     position: relative;
     padding: 20px 0;
 }
 
-/* Banner Styles */
 .banner {
     width: 80%;
     max-width: 1920px;
@@ -39,24 +36,20 @@ header {
     overflow: hidden;
 }
 
-/* Wave Background Effect */
 body::before {
     content: "";
     position: absolute;
-    width: 200vw; /* Width to cover the viewport */
-    height: 40vh; /* Height of the wave */
+    width: 200vw;
+    height: 40vh;
     z-index: -1;
     pointer-events: none;
-    bottom: -10vh; /* Position slightly below the viewport bottom */
-    left: -50vw; /* Center horizontally */
+    bottom: -10vh;
+    left: -50vw;
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
-    clip-path: path('M0,100 C150,200 350,0 500,100 L500,200 L0,200 Z'); /* Continuous wave path */
+    clip-path: path('M0,100 C150,200 350,0 500,100 L500,200 L0,200 Z');
     animation: wave-animation 20s linear infinite, color-change 30s linear infinite;
 }
 
-
-
-/* Header Text Animation */
 .banner h1 {
     font-size: 4em;
     margin: 0;
@@ -71,7 +64,6 @@ body::before {
     animation: fadeIn 2s ease-in-out 0.5s;
 }
 
-/* Donations Button Styles */
 .donations-button {
     position: absolute;
     top: 20px;
@@ -92,7 +84,6 @@ body::before {
     transform: scale(1.05);
 }
 
-/* Download Button Styles */
 .download-button {
     display: inline-block;
     margin-top: 30px;
@@ -113,7 +104,6 @@ body::before {
     transform: scale(1.1);
 }
 
-/* Main Content Styles */
 main {
     padding: 20px;
 }
@@ -130,7 +120,6 @@ h2 {
     animation: fadeIn 2s ease-in-out;
 }
 
-/* Enhanced List Styles */
 ul {
     list-style-type: none;
     padding: 0;
@@ -149,7 +138,6 @@ ul li {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Donation List Styles */
 .donation-list {
     display: flex;
     flex-wrap: wrap;
@@ -218,7 +206,6 @@ ul li {
     transform: scale(1.05);
 }
 
-/* Footer Styles */
 footer {
     background-color: #2C2C2C;
     color: #E0E0E0;
@@ -231,8 +218,6 @@ footer {
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
 }
 
-
-/* Keyframes for wave animations */
 @keyframes wave-animation {
     0% {
         transform: translateX(0);
@@ -242,7 +227,6 @@ footer {
     }
 }
 
-/* Keyframes for color change animation */
 @keyframes color-change {
     0% {
         background: linear-gradient(135deg, #00A1FF, #005CFF);
@@ -255,8 +239,6 @@ footer {
     }
 }
 
-
-/* Animations for other elements */
 @keyframes fadeIn {
     from {
         opacity: 0;
