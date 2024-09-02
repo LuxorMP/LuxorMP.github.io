@@ -36,19 +36,21 @@ header {
     overflow: hidden;
 }
 
+/* Wave Background Effect */
 body::before {
     content: "";
     position: absolute;
-    width: 200vw;
-    height: 40vh;
+    width: 300vw; /* Increase width to extend wave horizontally */
+    height: 40vh; /* Increase height for more prominence */
     z-index: -1;
     pointer-events: none;
-    bottom: -10vh;
-    left: -50vw;
+    bottom: -10vh; /* Position slightly below the viewport bottom */
+    left: -100vw; /* Adjust for better centering */
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
-    clip-path: path('M0,100 C150,200 350,0 500,100 L500,200 L0,200 Z');
+    clip-path: path('M0,100 C300,200 1200,0 2400,100 L2400,200 L0,200 Z'); /* Adjust wave shape */
     animation: wave-animation 20s linear infinite, color-change 30s linear infinite;
 }
+
 
 .banner h1 {
     font-size: 4em;
@@ -218,12 +220,16 @@ footer {
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Keyframes for wave animations */
 @keyframes wave-animation {
     0% {
-        transform: translateX(0);
+        transform: translateX(-100%) translateY(0);
+    }
+    50% {
+        transform: translateX(0) translateY(5%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(100%) translateY(0);
     }
 }
 
@@ -233,11 +239,7 @@ footer {
     }
     50% {
         background: linear-gradient(135deg, #FF00A1, #FF005C);
-    }
-    100% {
-        background: linear-gradient(135deg, #00A1FF, #005CFF);
-    }
-}
+    
 
 @keyframes fadeIn {
     from {
