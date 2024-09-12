@@ -1,4 +1,6 @@
-<html><head><base>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta property="og:title" content="Luxor Multiplayer">
     <meta property="og:description" content="Fortnite Chapter 2 Season 1 Emulator in 2024. Play Now!">
     <meta property="og:image" content="https://github.com/LuxorMP/LuxorMP.github.io/blob/main/Luxor_logo.png?raw=true">
@@ -6,323 +8,330 @@
     <meta property="og:type" content="website">
     <meta content="#800080" data-react-helmet="true" name="theme-color" />
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LuxorMP - Home</title>
-<style>
-    @font-face {
-        font-family: 'Burbank Big Condensed';
-        src: url('Burbank') format('woff2');
-        font-weight: bold;
-        font-style: normal;
-    }
-
-    body, html {
-        font-family: sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #0a0a0a;
-        color: #fff;
-        overflow-x: hidden;
-    }
-    footer {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        background-color: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        padding: 20px 40px;
-        border-radius: 50px;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        animation: float 3s ease-in-out infinite;
-        z-index: 1000;
-        width: fit-content;
-    }
-
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
+    <link rel="icon" type="image/png" href="https://github.com/LuxorMP/LuxorMP.github.io/blob/main/180836482333957f6440f8de33c03a9b.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxorMP - Home</title>
+    <style>
+        @font-face {
+            font-family: 'Burbank Big Condensed';
+            src: url('Burbank') format('woff2');
+            font-weight: bold;
+            font-style: normal;
         }
-        50% {
-            transform: translateY(-10px);
+
+        body, html {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
         }
-    }
-    .hero-section {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-image: url('https://cdn.ajaxfnc.com/uploads/luxor.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(5px);
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.6);
-        padding: 40px;
-        border-radius: 20px;
-    }
-
-    .hero-title {
-        font-family: 'Burbank Big Condensed';
-        font-size: 120px;
-        color: #ff69b4;
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-        margin-bottom: 20px;
-        animation: glow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes glow {
-        from {
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff69b4, 0 0 20px #ff69b4, 0 0 35px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4;
+        footer {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: float 3s ease-in-out infinite;
+            z-index: 1000;
+            width: fit-content;
         }
-        to {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 70px #ff69b4, 0 0 80px #ff69b4, 0 0 100px #ff69b4;
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
-    }
-
-    .hero-subtitle {
-        font-size: 36px;
-        color: #ffffff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        -webkit-text-stroke: 1px #00ffff;
-    }
-
-    .content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
-
-    .join-discord-section {
-        background-color: rgba(26, 26, 26, 0.8);
-        border-radius: 15px;
-        padding: 40px;
-        margin-top: 40px;
-        margin-bottom: 60px;
-        text-align: center;
-        position: relative;
-        border: 3px solid transparent;
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-        animation: borderGlow 2s ease-in-out infinite alternate;
-    }
-
-    .join-discord-section::before {
-        content: '';
-        position: absolute;
-        top: -3px;
-        left: -3px;
-        right: -3px;
-        bottom: -3px;
-        border-radius: 15px;
-        z-index: -1;
-        animation: borderGlow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes borderGlow {
-        from {
-            box-shadow: 0 0 2px rgba(0, 191, 255, 0.3), 0 0 4px rgba(0, 191, 255, 0.3);
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://cdn.ajaxfnc.com/uploads/luxor.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-        to {
-            box-shadow: 0 0 6px rgba(0, 191, 255, 0.6), 0 0 12px rgba(0, 191, 255, 0.6);
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
         }
-    }
 
-    .join-discord-title {
-        font-size: 36px;
-        color: #00ffff;
-        margin-bottom: 20px;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 20px;
+        }
 
-    .join-discord-description {
-        font-size: 18px;
-        color: #ffffff;
-        margin-bottom: 30px;
-        line-height: 1.6;
-    }
+        .hero-title {
+            font-family: 'Burbank Big Condensed';
+            font-size: 120px;
+            color: #ff69b4;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
 
-    .discord-button {
-        display: inline-block;
-        background: linear-gradient(45deg, #7289da, #5b6eae);
-        color: #fff;
-        padding: 15px 30px;
-        font-size: 20px;
-        text-decoration: none;
-        border-radius: 25px;
-        transition: all 0.3s ease-in-out;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: bold;
-    }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff69b4, 0 0 20px #ff69b4, 0 0 35px #ff69b4, 0 0 40px #ff69b4, 0 0 50px #ff69b4;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff69b4, 0 0 40px #ff69b4, 0 0 70px #ff69b4, 0 0 80px #ff69b4, 0 0 100px #ff69b4;
+            }
+        }
 
-    .discord-button:hover {
-        background: linear-gradient(45deg, #5b6eae, #7289da);
-        box-shadow: 0 6px 12px rgba(114, 137, 218, 0.3);
-        transform: translateY(-2px) scale(1.05);
-    }
+        .hero-subtitle {
+            font-size: 36px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            -webkit-text-stroke: 1px #00ffff;
+        }
 
-    .section-title {
-        font-size: 48px;
-        color: #00ffff;
-        text-align: center;
-        margin-top: 60px;
-        margin-bottom: 40px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    }
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-    .carousel-container {
-        position: relative;
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        overflow: hidden;
-    }
+        .join-discord-section {
+            background-color: rgba(26, 26, 26, 0.8);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+            border: 3px solid transparent;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            animation: borderGlow 2s ease-in-out infinite alternate;
+        }
 
-    .carousel {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-    }
+        .join-discord-section::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: 15px;
+            z-index: -1;
+            animation: borderGlow 2s ease-in-out infinite alternate;
+        }
 
-    .carousel-item {
-        flex: 0 0 100%;
-        text-align: center;
-        padding: 20px;
-        box-sizing: border-box;
-    }
+        @keyframes borderGlow {
+            from {
+                box-shadow: 0 0 2px rgba(0, 191, 255, 0.3), 0 0 4px rgba(0, 191, 255, 0.3);
+            }
+            to {
+                box-shadow: 0 0 6px rgba(0, 191, 255, 0.6), 0 0 12px rgba(0, 191, 255, 0.6);
+            }
+        }
 
-    .carousel-image {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
+        .join-discord-title {
+            font-size: 36px;
+            color: #00ffff;
+            margin-bottom: 20px;
+        }
 
-    .carousel-title {
-        font-size: 28px;
-        color: #00ffff;
-        margin-bottom: 15px;
-    }
+        .join-discord-description {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
 
-    .carousel-text {
-        font-size: 18px;
-        line-height: 1.5;
-    }
+        .discord-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #7289da, #5b6eae);
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
 
-    .carousel-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 24px;
-        color: #00ffff;
-        background-color: rgba(0, 0, 0, 0.5);
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+        .discord-button:hover {
+            background: linear-gradient(45deg, #5b6eae, #7289da);
+            box-shadow: 0 6px 12px rgba(114, 137, 218, 0.3);
+            transform: translateY(-2px) scale(1.05);
+        }
 
-    .carousel-arrow:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
+        .section-title {
+            font-size: 48px;
+            color: #00ffff;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
 
-    .carousel-arrow-left {
-        left: 10px;
-    }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
 
-    .carousel-arrow-right {
-        right: 10px;
-    }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
 
-    .carousel-dots {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
+        .carousel-item {
+            flex: 0 0 100%;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-    .carousel-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: #555;
-        margin: 0 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+        .carousel-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
 
-    .carousel-dot.active {
-        background-color: #00ffff;
-    }
+        .carousel-title {
+            font-size: 28px;
+            color: #00ffff;
+            margin-bottom: 15px;
+        }
 
-    .faq-section {
-        margin-top: 40px;
-    }
+        .carousel-text {
+            font-size: 18px;
+            line-height: 1.5;
+        }
 
-    .faq-item {
-        background-color: rgba(26, 26, 26, 0.8);
-        border-radius: 10px;
-        padding: 15px;
-        margin-bottom: 15px;
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
-    }
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: #00ffff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-    .faq-item:hover {
-        box-shadow: 0 5px 20px rgba(0, 255, 255, 0.5);
-    }
+        .carousel-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
-    .faq-question {
-        font-size: 18px;
-        color: #00ffff;
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        .carousel-arrow-left {
+            left: 10px;
+        }
 
-    .faq-arrow {
-        transition: transform 0.3s ease;
-    }
+        .carousel-arrow-right {
+            right: 10px;
+        }
 
-    .faq-arrow.active {
-        transform: rotate(180deg);
-    }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-    .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        font-size: 16px;
-        line-height: 1.5;
-    }
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #555;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-    .faq-answer.active {
-        max-height: 500px;
-        transition: max-height 0.5s ease-in;
-    }
-</style>
+        .carousel-dot.active {
+            background-color: #00ffff;
+        }
+
+        .faq-section {
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            background-color: rgba(26, 26, 26, 0.8);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .faq-question {
+            font-size: 18px;
+            color: #00ffff;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-arrow.active {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+
+        .download-message {
+            font-size: 16px;
+            color: #ffffff;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
     <div class="hero-section">
@@ -340,6 +349,7 @@
                 Join our Fortnite Chapter 2 Season 1 Discord! Meet new players, get exclusive content, and stay updated on the latest Luxor news.
             </p>
             <a href="https://discord.gg/luxormp" class="discord-button">Join Discord</a>
+            <p class="download-message">If this link doesn't work, our vanity is down. Try <a href="https://discord.gg/EqbDeY9Cj4" style="color: #00ffff;">https://discord.gg/EqbDeY9Cj4</a> instead.</p>
         </div>
 
         <h2 class="section-title">Features</h2>
@@ -464,4 +474,5 @@
             startAutoRotate();
         });
     </script>
-</body></html>
+</body>
+</html>
